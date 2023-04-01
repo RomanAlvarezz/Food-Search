@@ -1,0 +1,22 @@
+@use 'variables' as v;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: v.$Font;
+    background-color: v.$White;
+}
+
+.root {
+    margin: 0 auto;
+    padding-top: 50px;
+    width: 100%;
+    max-width: 320px;
+    min-height: 100vh;
+    border-left: solid black 2px;
+    border-right: solid black 2px;
+}

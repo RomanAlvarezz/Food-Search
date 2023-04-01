@@ -1,0 +1,47 @@
+@use '../base/variables' as v;
+
+.logo {
+    text-align: center;
+    margin: 0 0 50px;
+
+    &__title {
+        color: v.$Orange;
+        font-weight: 900;
+        text-transform: uppercase;
+        font-size: 2rem;
+
+        @media (min-width: 400px) {
+            font-size: 2.5rem;
+        }
+    }
+
+    &__subtitle {
+
+        color: v.$Green;
+        font-family: v.$Cursive;
+        font-size: 1.7rem;
+
+        &-container {
+            margin-top: -5px;
+            gap: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        @media (min-width: 400px) {
+            font-size: 2rem;
+        }
+
+    }
+
+    &__baguette {
+        width: 40px;
+        height: 40px;
+
+        @media (min-width: 400px) {
+            width: 50px;
+            height: 50px;
+        }
+    }
+}

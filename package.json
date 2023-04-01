@@ -1,0 +1,13 @@
+{
+  "name": "food-search",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "sass --watch app/sass/styles.scss app/css/styles.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
