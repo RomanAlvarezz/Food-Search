@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;900&family=Pacifico&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;900&family=Pacifico&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;900&family=Pacifico&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -19,6 +20,32 @@ body {
   min-height: 100vh;
   border-left: solid black 2px;
   border-right: solid black 2px;
+}
+
+.btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  font-size: 20px;
+  color: white;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.btn-mobile {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+.btn-desktop {
+  position: absolute;
+  top: 60px;
+  left: 10px;
+}
+.btn-selected {
+  background-color: navy;
 }
 
 .logo {
@@ -61,6 +88,50 @@ body {
   .logo__baguette {
     width: 50px;
     height: 50px;
+  }
+}
+
+.search {
+  position: relative;
+  margin: 0 auto;
+  width: 90%;
+  max-width: 600px;
+}
+.search__input {
+  width: 100%;
+  font-family: "Nunito", sans-serif;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 15px 15px 15px 55px;
+  border-radius: 25px;
+  box-shadow: 0px 5px 15px -5px rgba(0, 0, 0, 0.2);
+}
+@media (min-width: 400px) {
+  .search__input {
+    font-size: 18px;
+    padding: 20px 15px 20px 60px;
+    border-radius: 35px;
+  }
+}
+.search__btn {
+  outline: none;
+  border: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 20px;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+}
+.search__btn-img {
+  width: 25px;
+}
+@media (min-width: 400px) {
+  .search__btn {
+    left: 25px;
   }
 }
 

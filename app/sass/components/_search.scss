@@ -1,0 +1,48 @@
+@use '../base/variables' as v;
+
+.search {
+    position: relative;
+    margin: 0 auto;
+    width: 90%;
+    max-width: 600px;
+
+    &__input {
+        width: 100%;
+        font-family: v.$Font;
+        outline: none;
+        border: none;
+        font-size: 1rem;
+        font-weight: 700;
+        padding: 15px 15px 15px 55px;
+        border-radius: 25px;
+        box-shadow: 0px 5px 15px -5px rgba(0,0,0, 0.2);
+    
+        @media (min-width: 400px) {
+            font-size: 18px;
+            padding: 20px 15px 20px 60px;
+            border-radius: 35px;
+        }
+    }
+
+    &__btn {
+        outline: none;
+        border: none;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 20px;
+        background-color: transparent;
+
+        display: flex;
+        align-items: center;
+
+         
+        &-img {
+            width: 25px;
+        }
+
+        @media (min-width: 400px) {
+            left: 25px;
+        }
+    }
+}
