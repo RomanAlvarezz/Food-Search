@@ -45,6 +45,7 @@
     }
 
     &__content {
+        position: relative;
         padding: 25px 15px;
         display: flex;
         flex-wrap: wrap;
@@ -79,6 +80,51 @@
             color: v.$White;
             background-color: v.$Green;
         }
+    }
+
+    &__btn-info {
+        width: 50px;
+        height: 50px;
+        border: none;
+        border-radius: 50%;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 11px;
+        font-weight: 700;
+        font-family: v.$Font;
+        color: v.$White;
+        background-color: v.$Green;
+        outline: 2px solid v.$White;
+        outline-offset: 0px;
+        cursor: pointer;
+        transition: outline-offset 150ms ease-in;
+        position: absolute;
+        top: -25px;
+        right: -5px;
+
+        @media (min-width: 317px) {
+            top: -10px;
+        }
+
+        @media (min-width: 440px) {
+            top: -35px;
+        }
+
+        @media (min-width: 1000px) {
+            top: -35px;
+            right: -15px;
+            transform: translateX(50%);
+        }
+
+
+        &:hover {
+            outline-offset: -4px;
+        }
+
+        &:active {
+            background-color: darken(v.$Green, 5);
+        }
+
     }
 
 }
