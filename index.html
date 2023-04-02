@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Food Search</title>
+    <title>Linguini's Kitchen</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./app/css/styles.css">
 </head>
 <body>
@@ -42,26 +43,6 @@
                     </p>
                 </div>
             </form>
-            <!-- <div class="header__options">                  
-                <div class="header__option">
-                    <img class="header__icon" src="./app/assets/icon-bookmark.svg" alt="header icon">
-                    <h2 class="header__section-name">Saved</h2>
-                </div>
-                <div class="header__options__group">
-                    <div class="header__option">
-                        <img class="header__icon" src="./app/assets/icon-filter.svg" alt="header icon">
-                        <h2 class="header__section-name">Filter</h2>
-                    </div>
-                    <div class="header__option">
-                        <img class="header__icon" src="./app/assets/icon-reset.svg" alt="header icon">
-                        <h2 class="header__section-name">Reset</h2>
-                    </div>
-                    <div class="header__option">
-                        <img class="header__icon" src="./app/assets/icon-fridge.svg" alt="header icon">
-                        <h2 class="header__section-name">Fridge</h2>
-                    </div>
-                </div>
-            </div> -->
         </header>
 
         <section class="panel">
@@ -86,7 +67,7 @@
             </div>
           </div>  
           <div class="panel__content">
-            <div class="filter">
+            <!-- <div class="filter">
                <div class="filter__categories">
                     <h3 class="filter__category filter__category-active">cuisine</h3>
                     <h3 class="filter__category">type</h3>
@@ -121,8 +102,28 @@
                     <span class="filter__option">thai</span>
                     <span class="filter__option">vietnamese</span>
                 </div>
+            </div> -->
+            <div class="fridge">
+                <div class="fridge__text">
+                    <h1 class="fridge__title">Cook with what you have!</h1>
+                    <p class="fridge__info">Don't want to go to the store? No problem! Enter the ingredients you have on hand, and we'll show you recipes you could make. For best results, enter 10 or more ingredients below, including staples like salt, pepper, and olive oil. The ingredients you add here will sync with your Virtual Pantry on Android. Any changes in one will update the other</p>
+                </div>
+                <div class="fridge__mid">
+                    <div class="fridge__input-container">
+                        <input class="fridge__input" placeholder="Enter your ingredient..." type="text">
+                        <button class="fridge__input-btn">+</button>
+                    </div>
+                    <button class="fridge__btn">get recipe</button>
+                </div>
+                <div class="fridge__ingredients__container">
+                    <h2 class="fridge__ingredients__title">your pantry ingredients</h2>
+                    <div class="fridge__ingredients">
+                        <span class="fridge__ingredient">Tomato<i class="fa-solid fa-xmark fridge__ingredient-xmark"></i></span>
+                        <span class="fridge__ingredient">Pepper<i class="fa-solid fa-xmark fridge__ingredient-xmark"></i></span>
+                        <span class="fridge__ingredient">Meat<i class="fa-solid fa-xmark fridge__ingredient-xmark"></i></span>
+                    </div>
+                </div>
             </div>
-
         </div>
         </section>
         

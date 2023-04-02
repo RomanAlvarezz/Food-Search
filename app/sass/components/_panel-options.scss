@@ -9,6 +9,15 @@
 
     &__content {
         min-height: 100px;
+        padding: 20px 5px 15px;
+        width: 95%;
+        margin: 0 auto;
+
+    @media (min-width: 400px) {
+        width: 100%;
+        margin: 0;
+        padding: 20px 15px 15px;
+    } 
     }
 
     &__options {

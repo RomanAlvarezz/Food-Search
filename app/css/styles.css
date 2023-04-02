@@ -3,6 +3,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;900&family=Pacifico&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;900&family=Pacifico&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;900&family=Pacifico&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;900&family=Pacifico&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -199,6 +200,16 @@ body {
 }
 .panel__content {
   min-height: 100px;
+  padding: 20px 5px 15px;
+  width: 95%;
+  margin: 0 auto;
+}
+@media (min-width: 400px) {
+  .panel__content {
+    width: 100%;
+    margin: 0;
+    padding: 20px 15px 15px;
+  }
 }
 .panel__options {
   display: flex;
@@ -253,18 +264,6 @@ body {
   }
 }
 
-.filter {
-  padding: 20px 5px 15px;
-  width: 95%;
-  margin: 0 auto;
-}
-@media (min-width: 400px) {
-  .filter {
-    width: 100%;
-    margin: 0;
-    padding: 20px 15px 15px;
-  }
-}
 .filter__categories {
   background-color: white;
   display: flex;
@@ -374,6 +373,171 @@ body {
 }
 .filter__btn-info:active {
   background-color: #438a85;
+}
+
+.fridge {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: 1fr;
+  grid-template-areas: "text" "middle" "ingredients";
+}
+@media (min-width: 615px) {
+  .fridge {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, auto);
+    grid-template-areas: "text text text text" "middle middle ingredients ingredients";
+  }
+}
+@media (min-width: 900px) {
+  .fridge {
+    column-gap: 30px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+    grid-template-areas: "text text text" "middle ingredients ingredients";
+  }
+}
+.fridge__text {
+  grid-area: text;
+}
+.fridge__title {
+  margin-bottom: 10px;
+  color: #232323;
+}
+@media (min-width: 440px) {
+  .fridge__title {
+    font-size: 30px;
+  }
+}
+.fridge__info {
+  color: #232323;
+}
+@media (min-width: 440px) {
+  .fridge__info {
+    font-size: 17px;
+  }
+}
+.fridge__mid {
+  grid-area: middle;
+}
+.fridge__input {
+  border: none;
+  border-radius: 30px;
+  outline: none;
+  font-size: 1rem;
+  font-family: "Nunito", sans-serif;
+  font-weight: 600;
+  padding: 15px 15px 15px 55px;
+  width: 100%;
+  box-shadow: 0px 5px 15px -2px rgba(0, 0, 0, 0.35);
+  background-color: white;
+}
+.fridge__input-container {
+  position: relative;
+  width: 100%;
+  margin-bottom: 20px;
+}
+@media (min-width: 615px) {
+  .fridge__input-container {
+    max-width: 300px;
+  }
+}
+.fridge__input-btn {
+  cursor: pointer;
+  border: none;
+  border-radius: 50%;
+  outline: none;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 700;
+  font-family: "Nunito", sans-serif;
+  line-height: 18px;
+  color: #F2F2F2;
+  background-color: #232323;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 20px;
+}
+.fridge__btn {
+  cursor: pointer;
+  border: none;
+  border-radius: 30px;
+  outline: none;
+  width: 100%;
+  color: #F2F2F2;
+  font-size: 1rem;
+  font-family: "Nunito", sans-serif;
+  font-weight: 700;
+  padding: 15px;
+  width: 100%;
+  box-shadow: 0px 7px 15px -5px rgba(0, 0, 0, 0.35);
+  background-color: #4B9B96;
+  text-transform: capitalize;
+  transition: background-color 200ms ease-in-out;
+}
+@media (min-width: 615px) {
+  .fridge__btn {
+    max-width: 300px;
+  }
+}
+.fridge__btn:hover {
+  background-color: #46918c;
+}
+.fridge__btn:active {
+  transform: scale(0.95);
+}
+.fridge__ingredients {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+@media (min-width: 720px) {
+  .fridge__ingredients {
+    justify-content: start;
+  }
+}
+.fridge__ingredients__container {
+  grid-area: ingredients;
+}
+@media (min-width: 900px) {
+  .fridge__ingredients__container {
+    padding-left: 50px;
+  }
+}
+.fridge__ingredients__title {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 16px;
+  color: #707070;
+  margin-bottom: 20px;
+}
+@media (min-width: 720px) {
+  .fridge__ingredients__title {
+    text-align: left;
+  }
+}
+.fridge__ingredient {
+  cursor: pointer;
+  font-size: 14px;
+  padding: 5px 10px;
+  border-radius: 15px;
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.3);
+  transition: color 150ms ease-in;
+}
+.fridge__ingredient:hover {
+  color: #E16120;
+}
+.fridge__ingredient-xmark {
+  margin-left: 5px;
+}
+@media (min-width: 440px) {
+  .fridge__ingredient {
+    font-size: 15px;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

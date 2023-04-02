@@ -13,4 +13,5 @@ document.addEventListener('click', e => {
         $btnMobile.classList.remove('btn-selected');
         $root.style.maxWidth = '950px';
     }
+    console.log(e.target)
 })

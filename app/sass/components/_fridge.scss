@@ -1,0 +1,179 @@
+@use '../base/variables' as v;
+
+.fridge {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: 1fr;
+    grid-template-areas: 'text'
+                         'middle'
+                         'ingredients';
+
+    @media (min-width: 615px) {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, auto);
+        grid-template-areas: 'text text text text'
+                             'middle middle ingredients ingredients';
+    }
+
+    @media (min-width: 900px) {
+        column-gap: 30px;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, auto);
+        grid-template-areas: 'text text text'
+                             'middle ingredients ingredients';
+    }
+
+    &__text {
+        grid-area: text;
+    }
+
+    &__title {
+        margin-bottom: 10px;
+        color: v.$Black;
+
+        @media (min-width: 440px) {
+            font-size: 30px;
+        }
+    }
+
+    &__info {
+        color: v.$Black;
+
+        @media (min-width: 440px) {
+            font-size: 17px;
+        }
+    }
+
+    &__mid {
+        grid-area: middle;
+    }
+
+    &__input {
+        border: none;
+        border-radius: 30px;
+        outline: none;
+        font-size: 1rem;
+        font-family: v.$Font;
+        font-weight: 600;
+        padding: 15px 15px 15px 55px;
+        width: 100%;
+        box-shadow: 0px 5px 15px -2px rgba(0,0,0, 0.35);
+        background-color: white;
+
+
+        &-container {
+            position: relative;
+            width: 100%;
+            margin-bottom: 20px;
+
+            @media (min-width: 615px) {
+                max-width: 300px;
+            }
+        }
+
+        &-btn {
+            cursor: pointer;
+            border: none;
+            border-radius: 50%;
+            outline: none;
+            width: 25px;
+            height: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+            font-weight: 700;
+            font-family: v.$Font;
+            line-height: 18px;
+            color: v.$White;
+            background-color: v.$Black;
+
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 20px;
+        }
+    }
+
+    &__btn {
+        cursor: pointer;
+        border: none;
+        border-radius: 30px;
+        outline: none;
+        width: 100%;
+        color: v.$White;
+        font-size: 1rem;
+        font-family: v.$Font;
+        font-weight: 700;
+        padding: 15px;
+        width: 100%;
+        box-shadow: 0px 7px 15px -5px rgba(0,0,0, 0.35);
+        background-color: v.$Green;
+        text-transform: capitalize;
+        transition: background-color 200ms ease-in-out;
+
+        @media (min-width: 615px) {
+            max-width: 300px;
+        }
+
+        &:hover {
+            background-color: darken(v.$Green, 3);
+        }
+
+        &:active {
+            transform: scale(0.95);
+        }
+    }
+
+    &__ingredients {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+
+        @media (min-width: 720px) {
+            justify-content: start;
+        }
+
+        &__container {
+            grid-area: ingredients;
+
+            @media (min-width: 900px) {
+                padding-left: 50px;
+            }
+        }
+
+        &__title {
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 16px;
+            color: v.$Grey;
+            margin-bottom: 20px;
+
+            @media (min-width: 720px) {
+                text-align: left;
+            }
+        }
+    }
+
+    &__ingredient {
+        cursor: pointer;
+        font-size: 14px;
+        padding: 5px 10px;
+        border-radius: 15px;
+        box-shadow: 0px 4px 10px 0px rgba(0,0,0, 0.3);
+        transition: color 150ms ease-in;
+
+        &:hover {
+            color: v.$Orange;
+        }
+
+        &-xmark {
+            margin-left: 5px;
+        }
+
+        @media (min-width: 440px) {
+            font-size: 15px;
+        }
+    }
+
+}

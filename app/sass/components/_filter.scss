@@ -1,15 +1,15 @@
 @use '../base/variables' as v;
 
 .filter {
-    padding: 20px 5px 15px;
-    width: 95%;
-    margin: 0 auto;
+    // padding: 20px 5px 15px;
+    // width: 95%;
+    // margin: 0 auto;
 
-    @media (min-width: 400px) {
-        width: 100%;
-        margin: 0 ;
-        padding: 20px 15px 15px;
-    } 
+    // @media (min-width: 400px) {
+    //     width: 100%;
+    //     margin: 0 ;
+    //     padding: 20px 15px 15px;
+    // } 
 
     &__categories {
         background-color: white;
