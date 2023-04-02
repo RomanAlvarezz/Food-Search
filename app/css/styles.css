@@ -426,10 +426,12 @@ body {
   font-size: 1rem;
   font-family: "Nunito", sans-serif;
   font-weight: 600;
-  padding: 15px 15px 15px 55px;
+  padding: 15px;
   width: 100%;
   box-shadow: 0px 5px 15px -2px rgba(0, 0, 0, 0.35);
   background-color: white;
+  color: #232323;
+  padding-left: 55px;
 }
 .fridge__input-container {
   position: relative;
@@ -467,15 +469,14 @@ body {
   border: none;
   border-radius: 30px;
   outline: none;
-  width: 100%;
-  color: #F2F2F2;
   font-size: 1rem;
   font-family: "Nunito", sans-serif;
   font-weight: 700;
   padding: 15px;
   width: 100%;
-  box-shadow: 0px 7px 15px -5px rgba(0, 0, 0, 0.35);
+  box-shadow: 0px 5px 15px -2px rgba(0, 0, 0, 0.35);
   background-color: #4B9B96;
+  color: #F2F2F2;
   text-transform: capitalize;
   transition: background-color 200ms ease-in-out;
 }
