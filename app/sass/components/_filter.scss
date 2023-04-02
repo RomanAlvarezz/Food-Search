@@ -1,0 +1,84 @@
+@use '../base/variables' as v;
+
+.filter {
+    padding: 20px 5px 15px;
+    width: 95%;
+    margin: 0 auto;
+
+    @media (min-width: 400px) {
+        width: 100%;
+        margin: 0 ;
+        padding: 20px 15px 15px;
+    } 
+
+    &__categories {
+        background-color: white;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+
+        @media (min-width: 400px) {
+            justify-content: start;
+        }  
+    }
+    
+    &__category {
+        text-transform: uppercase;
+        font-size: 15px;
+        padding-bottom: 10px;
+        border-bottom: 3px solid transparent;
+        cursor: pointer;
+
+        &:hover {
+            color: v.$Grey;
+        }
+
+        @media (min-width: 400px) {
+            font-size: 16px;
+        } 
+
+        &-active {
+            color: v.$Green;
+            border-bottom: 3px solid v.$Green;
+        }
+    }
+
+    &__content {
+        padding: 25px 15px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+
+        @media (min-width:600px) {
+            justify-content: space-between;
+            gap: 10px;
+        }
+    }
+
+    &__option {
+        text-transform: capitalize;
+        font-size: 15px;
+        padding: 5px 15px;
+        border-radius: 1rem;
+        cursor: pointer;
+        color: v.$Grey;
+        box-shadow: 0px 2px 4px 0px rgba(0,0,0, 0.15);
+        transition: all 150ms ease-in-out;
+
+        @media (min-width: 600px) {
+            font-size: 16px;
+        }
+
+        &:hover {
+            box-shadow: 0px 2px 4px 0px rgba(0,0,0, 0.35);
+        }
+
+        &-active {
+            color: v.$White;
+            background-color: v.$Green;
+        }
+    }
+
+}
