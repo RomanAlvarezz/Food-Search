@@ -1,0 +1,42 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.diets {
+    &__modal {
+        display: none;
+        @include m.modal-background;
+    }
+
+    @include m.modal;
+
+    &__btn-close {
+        @include m.modal-close;
+    }
+
+    &__title {
+        @include m.modal-title;
+        margin-bottom: 20px;
+    }
+
+    &__card {
+        margin-bottom: 30px;
+
+        &__title {
+            color: v.$White;
+            margin-bottom: 5px;
+
+            @media (min-width: 700px) {
+                font-size: 20px;
+            }
+        }
+
+        &__info {
+            font-size: 14px;
+            color: v.$White;
+
+            @media (min-width: 700px) {
+                font-size: 16px;
+            }
+        }
+    }
+}
