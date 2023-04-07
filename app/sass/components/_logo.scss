@@ -1,10 +1,13 @@
 @use '../base/variables' as v;
 
 .logo {
+    text-decoration: none;
+    display: block;
     text-align: center;
     margin: 0 0 50px;
 
     &__title {
+        text-decoration: none;
         color: v.$Orange;
         font-weight: 900;
         text-transform: uppercase;

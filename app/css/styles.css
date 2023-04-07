@@ -64,10 +64,13 @@ body {
 }
 
 .logo {
+  text-decoration: none;
+  display: block;
   text-align: center;
   margin: 0 0 50px;
 }
 .logo__title {
+  text-decoration: none;
   color: #E16120;
   font-weight: 900;
   text-transform: uppercase;
