@@ -3,19 +3,7 @@
 .slider {
     &__container {
         width: 100%;
-        max-width: 1000px;
         position: relative; 
-    }
-
-    &__title {
-        text-align: center;
-        text-transform: capitalize;
-        margin-bottom: 20px;
-        color: v.$Black;
-
-        @media (min-width: 600px) {
-            font-size: 30px;
-        }
     }
 
     &__card {
@@ -58,12 +46,6 @@
             object-fit: cover;
         }
     }
-}
-
-.slider__container {
-    width: 100%;
-    max-width: 1000px;
-    position: relative;
 }
 
 .swiper {

@@ -1,0 +1,19 @@
+@use '../base/variables' as v;
+
+.section {
+    margin-bottom: 80px;
+    &:last-child{
+        margin-bottom: 0;
+    }
+
+    &__title {
+        text-align: center;
+        text-transform: capitalize;
+        margin-bottom: 20px;
+        color: v.$Black;
+
+        @media (min-width: 600px) {
+            font-size: 30px;
+        }
+    }
+}

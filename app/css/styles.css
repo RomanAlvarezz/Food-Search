@@ -7,6 +7,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;900&family=Pacifico&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;900&family=Pacifico&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;900&family=Pacifico&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;900&family=Pacifico&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -705,19 +706,7 @@ body {
 
 .slider__container {
   width: 100%;
-  max-width: 1000px;
   position: relative;
-}
-.slider__title {
-  text-align: center;
-  text-transform: capitalize;
-  margin-bottom: 20px;
-  color: #232323;
-}
-@media (min-width: 600px) {
-  .slider__title {
-    font-size: 30px;
-  }
 }
 .slider__card {
   display: block;
@@ -756,12 +745,6 @@ body {
   object-fit: cover;
 }
 
-.slider__container {
-  width: 100%;
-  max-width: 1000px;
-  position: relative;
-}
-
 .swiper {
   width: calc(100% - 70px);
   border-radius: 15px;
@@ -797,6 +780,24 @@ div[class^=swiper-button] img {
   top: 50%;
   transform: translateY(25%);
   left: 0;
+}
+
+.section {
+  margin-bottom: 80px;
+}
+.section:last-child {
+  margin-bottom: 0;
+}
+.section__title {
+  text-align: center;
+  text-transform: capitalize;
+  margin-bottom: 20px;
+  color: #232323;
+}
+@media (min-width: 600px) {
+  .section__title {
+    font-size: 30px;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
