@@ -1,0 +1,42 @@
+@use '../base/variables' as v;
+
+.footer {
+    background-color: v.$Orange;
+    color: v.$White;
+    padding-top: 60px;
+
+
+    &__icon {
+        font-size: 35px;
+        cursor: pointer;
+        transition: color 150ms ease-in-out;
+
+        &:hover {
+            color: v.$Green;
+        }
+
+        &__container{
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 35px;
+        }
+    }
+
+    &__link {
+        text-decoration: none;
+        color: v.$White;
+    }
+
+    &__title {
+        padding-bottom: 15px;
+        text-align: center;
+        font-weight: 300;
+
+        a {
+           color: v.$White; 
+        }
+    }
+
+    
+}
