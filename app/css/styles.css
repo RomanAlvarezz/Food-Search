@@ -8,6 +8,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;900&family=Pacifico&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;900&family=Pacifico&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;900&family=Pacifico&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;900&family=Pacifico&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -798,6 +799,34 @@ div[class^=swiper-button] img {
   .section__title {
     font-size: 30px;
   }
+}
+
+.card {
+  display: block;
+  text-decoration: none;
+}
+.card__container {
+  padding: 10px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  column-gap: 15px;
+  row-gap: 40px;
+}
+.card__img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+.card:hover .card__title {
+  color: #707070;
+}
+.card__title {
+  padding: 5px 0;
+  text-align: center;
+  color: #232323;
+  font-size: 1rem;
 }
 
 /*# sourceMappingURL=styles.css.map */
