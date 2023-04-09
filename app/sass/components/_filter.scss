@@ -76,9 +76,10 @@
             box-shadow: 0px 2px 4px 0px rgba(0,0,0, 0.35);
         }
 
-        &-active {
+        &-active {  
             color: v.$White;
-            background-color: v.$Green;
+            background-image: linear-gradient(-20deg, #00cdac 0%, #8ddad5 100%);
+
         }
     }
 
@@ -93,7 +94,7 @@
         font-weight: 700;
         font-family: v.$Font;
         color: v.$White;
-        background-color: v.$Green;
+        background-image: linear-gradient(-20deg, #00cdac 0%, #8ddad5 100%);
         outline: 2px solid v.$White;
         outline-offset: 0px;
         cursor: pointer;
@@ -122,7 +123,7 @@
         }
 
         &:active {
-            background-color: darken(v.$Green, 5);
+            opacity: 0.85;;
         }
 
     }

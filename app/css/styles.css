@@ -349,7 +349,7 @@ body {
 }
 .filter__option-active {
   color: #F2F2F2;
-  background-color: #4B9B96;
+  background-image: linear-gradient(-20deg, #00cdac 0%, #8ddad5 100%);
 }
 .filter__btn-info {
   width: 50px;
@@ -362,7 +362,7 @@ body {
   font-weight: 700;
   font-family: "Nunito", sans-serif;
   color: #F2F2F2;
-  background-color: #4B9B96;
+  background-image: linear-gradient(-20deg, #00cdac 0%, #8ddad5 100%);
   outline: 2px solid #F2F2F2;
   outline-offset: 0px;
   cursor: pointer;
@@ -392,7 +392,7 @@ body {
   outline-offset: -4px;
 }
 .filter__btn-info:active {
-  background-color: #438a85;
+  opacity: 0.85;
 }
 
 .fridge {
@@ -840,7 +840,7 @@ div[class^=swiper-button] img {
   }
 }
 .post__tag {
-  background-color: #E16120;
+  background-image: linear-gradient(-60deg, #ff5858 0%, #f09819 100%);
   color: #F2F2F2;
   font-size: 12px;
   text-transform: uppercase;
@@ -931,7 +931,7 @@ div[class^=swiper-button] img {
   font-size: 20px;
   font-weight: 600;
   color: #F2F2F2;
-  background-color: #E16120;
+  background-image: linear-gradient(-60deg, #ff5858 0%, #f09819 100%);
 }
 @media (min-width: 650px) {
   .post__instructions__number {
