@@ -1,0 +1,130 @@
+@use '../base/variables' as v;
+
+.post {
+
+    &__title {
+        margin-bottom: 10px;
+
+        @media (min-width: 650px) {
+            font-size: 30px;
+        }
+    }
+
+    &__tag {
+        background-color: v.$Orange;
+        color: v.$White;
+        font-size: 12px;
+        text-transform: uppercase;
+        font-weight: 600;
+        padding: 5px 10px;
+        border-radius: 3px;
+        transition: all 250ms ease-in;
+
+        &:hover {
+            background-color: v.$Green;
+        }
+
+        @media (min-width: 650px) {
+            font-size: 14px;
+        }
+
+        &-container {
+            margin-bottom: 15px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+    }
+
+    &__image {
+        border-radius: 3px;
+        width: 100%;
+        max-width: 600px;
+        object-fit: cover;
+        margin-bottom: 20px;
+    }
+
+    &__text {
+        font-size: 15px;
+        margin-bottom: 20px;
+
+        @media (min-width: 650px) {
+            font-size: 17px;
+        }
+    }
+
+    &__card {
+        padding: 20px 15px;
+        background-color: rgba(v.$Grey, 0.3);
+        border-radius: 3px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        @media (min-width: 800px) {
+            flex-direction: row;
+        }
+    }
+
+    &__ingredients {
+
+        @media (min-width: 800px) {
+            width: 30%;
+        }
+
+        &__title {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        &__list {
+            padding-left: 40px;
+            text-transform: capitalize;
+            font-size: 15px;
+
+            @media (min-width: 650px) {
+                font-size: 17px;
+            }
+        }
+    }
+
+    &__instructions {
+        &__title {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        &__step {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 10px;
+        }
+
+        &__number {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            font-weight: 600;
+            color: v.$White;
+            background-color: v.$Orange;
+
+            @media (min-width: 650px) {
+                font-size: 22px;
+            }
+        }
+
+        &__text {
+            flex: 1;
+            font-size: 15px;
+
+            @media (min-width: 650px) {
+                font-size: 17px;
+            }
+        }
+    }
+}
