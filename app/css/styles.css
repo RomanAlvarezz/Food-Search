@@ -551,7 +551,7 @@ body {
   height: 100vh;
   background-color: rgba(128, 128, 128, 0.5);
   transform: translateX(100%);
-  transition: transform 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
 }
 @media (min-width: 700px) {
   .saved {
@@ -631,7 +631,7 @@ body {
   height: 100vh;
   background-color: rgba(128, 128, 128, 0.5);
   transform: translateX(-100%);
-  transition: transform 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
 }
 @media (min-width: 700px) {
   .diets {

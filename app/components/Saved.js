@@ -1,5 +1,7 @@
+const d = document;
+
 export function Saved() {
-    const $saved = document.createElement('section');
+    const $saved = d.createElement('section');
     $saved.classList.add('saved__modal');
 
     $saved.innerHTML = `
@@ -32,6 +34,12 @@ export function Saved() {
         </article>
     </aside>
     `;
+
+    d.addEventListener('click', e => {
+        if (e.target.matches('.saved__btn-close')) {
+            d.querySelector('.saved__modal').style.transform = 'translateX(100%)'
+        }
+    })
 
     return $saved;
 }

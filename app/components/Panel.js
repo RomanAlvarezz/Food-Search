@@ -50,7 +50,7 @@ export function Panel() {
                     break;
                 case 'saved':
                     console.log(d.querySelector('.saved__modal'));
-                    d.querySelector('.saved__modal').style.transform = 'translateX(0)'
+                    d.querySelector('.saved__modal').style.transform = 'translateX(0)';
                     break;
                 case 'reset':
                 console.log('este es el reseteo');
