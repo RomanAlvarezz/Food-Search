@@ -1,5 +1,7 @@
+const d = document;
+
 export function Diets() {
-    const $diets = document.createElement('section');
+    const $diets = d.createElement('section');
     $diets.classList.add('diets__modal');
 
     $diets.innerHTML = `
@@ -24,6 +26,12 @@ export function Diets() {
         </article>
     </aside>
     `;
+
+    d.addEventListener('click', e => {
+        if (e.target.matches('.diets__btn-close')) {
+            d.querySelector('.diets__modal').style.transform = 'translateX(-100%)';
+        }
+    })
 
     return $diets;
 }

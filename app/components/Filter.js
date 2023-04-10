@@ -1,5 +1,7 @@
+const d = document;
+
 export function Filter() {
-    const $filter = document.createElement('div');
+    const $filter = d.createElement('div');
     $filter.classList.add('filter');
 
     $filter.innerHTML = `
@@ -38,6 +40,12 @@ export function Filter() {
         <span class="filter__option">vietnamese</span>
     </div>    
     `;
+
+    d.addEventListener('click', e => {
+        if (e.target.matches('.filter__btn-info') || e.target.matches('.filter__btn-info *')){
+            d.querySelector('.diets__modal').style.transform = 'translateX(0)';
+        }
+    })
 
     return $filter;
 }
