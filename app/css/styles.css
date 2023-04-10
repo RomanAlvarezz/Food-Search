@@ -41,32 +41,6 @@ body {
   margin-bottom: 100px;
 }
 
-.btn {
-  width: 40px;
-  height: 40px;
-  border-radius: 20px;
-  font-size: 20px;
-  color: white;
-  background-color: black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-}
-.btn-mobile {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-}
-.btn-desktop {
-  position: absolute;
-  top: 60px;
-  left: 10px;
-}
-.btn-selected {
-  background-color: navy;
-}
-
 .logo {
   text-decoration: none;
   display: block;
