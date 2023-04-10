@@ -3,8 +3,7 @@
 
 .diets {
     &__modal {
-        display: none;
-        @include m.modal-background;
+        @include m.modal-background(-100%);
     }
 
     @include m.modal;

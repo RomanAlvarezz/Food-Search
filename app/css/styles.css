@@ -544,13 +544,14 @@ body {
   margin-left: auto;
 }
 .saved__modal {
-  display: none;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100vh;
   background-color: rgba(128, 128, 128, 0.5);
+  transform: translateX(100%);
+  transition: transform 300ms ease-in-out;
 }
 @media (min-width: 700px) {
   .saved {
@@ -623,13 +624,14 @@ body {
   overflow: auto;
 }
 .diets__modal {
-  display: none;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100vh;
   background-color: rgba(128, 128, 128, 0.5);
+  transform: translateX(-100%);
+  transition: transform 300ms ease-in-out;
 }
 @media (min-width: 700px) {
   .diets {
