@@ -42,8 +42,31 @@ export function Filter() {
     `;
 
     d.addEventListener('click', e => {
-        if (e.target.matches('.filter__btn-info') || e.target.matches('.filter__btn-info *')){
+        let $element = e.target;
+
+        if ($element.matches('.filter__btn-info') || $element.matches('.filter__btn-info *')){
             d.querySelector('.diets__modal').style.transform = 'translateX(0)';
+            return;
+        }
+
+        if ($element.classList.contains('filter__category') &&
+        !($element.classList.contains('filter__category-active'))) {
+            d.querySelector('.filter__category-active').classList.remove('filter__category-active');
+            $element.classList.add('filter__category-active');
+            return;
+        }
+
+        if ($element.classList.contains('filter__option') &&
+        $element.classList.contains('filter__option-active')) {
+            $element.classList.remove('filter__option-active');
+            console.log('Desactivamos');
+            return;
+        }
+
+        if ($element.classList.contains('filter__option') &&
+        !($element.classList.contains('filter__option-active'))){
+            $element.classList.add('filter__option-active');
+            console.log('Activamos');
         }
     })
 
