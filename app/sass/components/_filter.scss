@@ -41,6 +41,10 @@
         &-active {
             color: v.$Green;
             border-bottom: 3px solid v.$Green;
+
+            &:hover {
+                color: v.$Green;
+            }
         }
     }
 
