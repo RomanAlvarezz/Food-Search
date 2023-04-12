@@ -32,32 +32,30 @@ export function Panel() {
     </div>
     `;
 
-    d.addEventListener('click', e => {
-        const $option = e.target;
-
-        if ($option.matches('.panel__option') ||  $option.matches('.panel__option *')){
-            const $panelContent = d.querySelector('.panel__content');
-            //console.log($option.dataset.paneloption);
-
-            switch ($option.dataset.paneloption) {
-                case 'filter':
-                    $panelContent.innerHTML = '';
-                    $panelContent.appendChild(Filter()); 
-                    break;
-                case 'fridge':
-                    $panelContent.innerHTML = '';
-                    $panelContent.appendChild(Fridge()); 
-                    break;
-                case 'saved':
-                    console.log(d.querySelector('.saved__modal'));
-                    d.querySelector('.saved__modal').style.transform = 'translateX(0)';
-                    break;
-                case 'reset':
-                console.log('este es el reseteo');
-                    break;
-            }
-        }
-    })
-
     return $panel;
 }
+
+d.addEventListener('click', e => {
+    const $option = e.target;
+
+    if ($option.matches('.panel__option') ||  $option.matches('.panel__option *')){
+        const $panelContent = d.querySelector('.panel__content');
+
+        switch ($option.dataset.paneloption) {
+            case 'filter':
+                $panelContent.innerHTML = '';
+                $panelContent.appendChild(Filter()); 
+                break;
+            case 'fridge':
+                $panelContent.innerHTML = '';
+                $panelContent.appendChild(Fridge()); 
+                break;
+            case 'saved':
+                d.querySelector('.saved__modal').style.transform = 'translateX(0)';
+                break;
+            case 'reset':
+            console.log('este es el reseteo, falta codear su funcinalidad');
+                break;
+        }
+    }
+})
