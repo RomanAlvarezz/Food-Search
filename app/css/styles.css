@@ -490,12 +490,26 @@ body {
 }
 .fridge__ingredients {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 10px;
 }
+.fridge__ingredients::-webkit-scrollbar {
+  width: 8px;
+}
+.fridge__ingredients::-webkit-scrollbar-thumb {
+  background-color: #707070;
+  border-radius: 10px;
+}
+.fridge__ingredients::-webkit-scrollbar-thumb:hover {
+  background-color: #4B9B96;
+}
 @media (min-width: 720px) {
   .fridge__ingredients {
+    gap: 15px;
     justify-content: start;
+    overflow: auto;
+    max-height: 137px;
   }
 }
 .fridge__ingredients__container {
@@ -519,15 +533,17 @@ body {
   }
 }
 .fridge__ingredient {
+  text-transform: capitalize;
   cursor: pointer;
   font-size: 14px;
   padding: 5px 10px;
+  border: solid 2px #4B9B96;
   border-radius: 15px;
-  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.3);
-  transition: color 150ms ease-in;
+  transition: all 150ms ease-in;
 }
 .fridge__ingredient:hover {
   color: #E16120;
+  border-color: #E16120;
 }
 .fridge__ingredient-xmark {
   margin-left: 5px;

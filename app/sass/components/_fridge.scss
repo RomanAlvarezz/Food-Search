@@ -108,11 +108,28 @@
 
     &__ingredients {
         display: flex;
+        flex-wrap: wrap;
         justify-content: center;
         gap: 10px;
 
+        &::-webkit-scrollbar {
+            width: 8px;
+        }
+    
+        &::-webkit-scrollbar-thumb {
+            background-color: v.$Grey;
+            border-radius: 10px;
+        }
+    
+        &::-webkit-scrollbar-thumb:hover {
+            background-color: v.$Green;
+        }
+
         @media (min-width: 720px) {
+            gap: 15px;
             justify-content: start;
+            overflow: auto;
+            max-height: 137px;
         }
 
         &__container {
@@ -137,15 +154,17 @@
     }
 
     &__ingredient {
+        text-transform: capitalize;
         cursor: pointer;
         font-size: 14px;
         padding: 5px 10px;
+        border: solid 2px v.$Green;
         border-radius: 15px;
-        box-shadow: 0px 4px 10px 0px rgba(0,0,0, 0.3);
-        transition: color 150ms ease-in;
+        transition: all 150ms ease-in;
 
         &:hover {
             color: v.$Orange;
+            border-color: v.$Orange;
         }
 
         &-xmark {

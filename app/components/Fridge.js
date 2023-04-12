@@ -1,5 +1,7 @@
+const d = document;
+
 export function Fridge() {
-    const $fridge = document.createElement('div');
+    const $fridge = d.createElement('div');
     $fridge.classList.add('fridge');
 
     $fridge.innerHTML = `
@@ -26,3 +28,20 @@ export function Fridge() {
 
     return $fridge;
 }
+
+d.addEventListener('click', e => {
+    let $element = e.target;
+
+    if($element.matches('.fridge__ingredient-xmark')) {
+        $element.parentElement.remove();
+    }
+
+    if ($element.matches('.fridge__input-btn')) {
+        const $input = d.querySelector('.fridge__input')
+        let ingredient = $input.value.trim();
+        if (ingredient) {
+            const $ingredients = d.querySelector('.fridge__ingredients');
+            $ingredients.insertAdjacentHTML('afterbegin', `<span class="fridge__ingredient">${ingredient}<i class="fa-solid fa-xmark fridge__ingredient-xmark"></i></span>`);
+        }
+    }
+})
