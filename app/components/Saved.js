@@ -35,11 +35,11 @@ export function Saved() {
     </aside>
     `;
 
-    d.addEventListener('click', e => {
-        if (e.target.matches('.saved__btn-close')) {
-            d.querySelector('.saved__modal').style.transform = 'translateX(100%)'
-        }
-    })
-
     return $saved;
 }
+
+d.addEventListener('click', e => {
+    if (e.target.matches('.saved__btn-close')) {
+        d.querySelector('.saved__modal').style.transform ='translateX(100%)'
+    }
+})
