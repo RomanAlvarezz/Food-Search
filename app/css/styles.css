@@ -302,7 +302,7 @@ body {
 }
 @media (min-width: 600px) {
   .filter__content {
-    justify-content: space-between;
+    justify-content: flex-start;
     gap: 10px;
   }
 }
