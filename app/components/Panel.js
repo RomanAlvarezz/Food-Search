@@ -35,11 +35,16 @@ export function Panel() {
     return $panel;
 }
 
+//Por defecto va a cargar el filtro;
+setTimeout(()=>{
+    const $panelContent = d.querySelector('.panel__content');
+    $panelContent.appendChild(Filter()); 
+}, 100)
+
 d.addEventListener('click', e => {
     const $option = e.target;
 
     if ($option.matches('.panel__option') ||  $option.matches('.panel__option *')){
-        const $panelContent = d.querySelector('.panel__content');
 
         switch ($option.dataset.paneloption) {
             case 'filter':
