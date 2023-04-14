@@ -35,13 +35,13 @@ export function Panel() {
     return $panel;
 }
 
-//Por defecto va a cargar el filtro;
 setTimeout(()=>{
     const $panelContent = d.querySelector('.panel__content');
     $panelContent.appendChild(Filter()); 
-}, 100)
+}, 0)
 
 d.addEventListener('click', e => {
+    const $panelContent = d.querySelector('.panel__content');
     const $option = e.target;
 
     if ($option.matches('.panel__option') ||  $option.matches('.panel__option *')){
