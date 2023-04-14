@@ -1,5 +1,6 @@
+export default function SliderMovement() {
 
-const swiper = new Swiper('.swiper', {
+  const swiper = new Swiper('.swiper', {
     speed: 600,
     spaceBetween: 10,
     slidesPerView: 1,
@@ -17,4 +18,6 @@ const swiper = new Swiper('.swiper', {
             spaceBetween: 15
         }
     }
-  });
+  });  
+  
+}
