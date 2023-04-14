@@ -20,7 +20,6 @@ export function Filter() {
     setTimeout(()=>{
         let initialContent = '';
         api.CUISINE.forEach(textItem => initialContent += `<span class="filter__option" data-state="inactive">${textItem}</span>`);
-        console.log(initialContent, 'carga por defecto');
         d.querySelector('.filter__content').innerHTML = initialContent;
     }, 10);
 
@@ -48,7 +47,7 @@ function categorySelected(category) {
             api[category].forEach(textItem => html += `<span class="filter__option" data-state="inactive">${textItem}</span>`);
             break;
     }
-    //$root.insertAdjacentElement('afterend', Saved());
+
     $filterContent.insertAdjacentHTML('afterbegin', html);
 }
 
