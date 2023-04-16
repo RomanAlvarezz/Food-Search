@@ -726,6 +726,7 @@ body {
 }
 .slider__card__title {
   position: absolute;
+  width: 100%;
   bottom: 0;
   padding: 10px 10px 20px;
   text-align: center;
