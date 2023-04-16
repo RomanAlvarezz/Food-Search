@@ -563,6 +563,7 @@ body {
   margin-left: auto;
 }
 .saved__modal {
+  z-index: 10;
   position: fixed;
   top: 0;
   left: 0;
@@ -643,6 +644,7 @@ body {
   overflow: auto;
 }
 .diets__modal {
+  z-index: 10;
   position: fixed;
   top: 0;
   left: 0;
