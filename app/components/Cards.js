@@ -1,6 +1,6 @@
 const d = document;
 
-export function Cards(title) {
+export function Cards(title, recipes) {
     const $section = d.createElement('section');
     $section.classList.add('section');
 
@@ -11,7 +11,17 @@ export function Cards(title) {
     const $cardsContainer = d.createElement('div');
     $cardsContainer.classList.add('card__container');
 
-    $cardsContainer.innerHTML = `
+    let $cards = '';
+    recipes.forEach(recipe => $cards += `
+    <a class="card" href="#${recipe.id}">
+        <img class="card__img" src="${recipe.image}" alt="card image">
+        <h3 class="card__title">${recipe.title}</h3>
+    </a>
+    `);
+
+    $cardsContainer.innerHTML = $cards;
+
+    /*$cardsContainer.innerHTML = `
         <a class="card" href="#/20">
             <img class="card__img" src="https://picsum.photos/id/20/300" alt="card image">
             <h3 class="card__title">Partlitc pasta with olive oil</h3>
@@ -36,7 +46,7 @@ export function Cards(title) {
             <img class="card__img" src="https://picsum.photos/id/25/300" alt="card image">
             <h3 class="card__title">Partlitc pasta with olive oil</h3>
         </a>
-    `;
+    `;*/
 
     $section.appendChild($title);
     $section.appendChild($cardsContainer);
