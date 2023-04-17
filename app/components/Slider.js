@@ -16,7 +16,7 @@ export function Slider(title, recipes) {
     let $slides = '';
     recipes.forEach(recipe => $slides += `
     <div class="swiper-slide">
-        <a class="slider__card" href="#/recipe?id${recipe.id}">
+        <a class="slider__card" href="#/recipe?id=${recipe.id}">
             <h3 class="slider__card__title">${recipe.title}</h3>
             <img class="slider__card__img" src="${recipe.image}" alt="">
         </a>
