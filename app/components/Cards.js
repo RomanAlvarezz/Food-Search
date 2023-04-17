@@ -13,7 +13,7 @@ export function Cards(title, recipes) {
 
     let $cards = '';
     recipes.forEach(recipe => $cards += `
-    <a class="card" href="#${recipe.id}">
+    <a class="card" href="#/recipe?id=${recipe.id}">
         <img class="card__img" src="${recipe.image}" alt="card image">
         <h3 class="card__title">${recipe.title}</h3>
     </a>
