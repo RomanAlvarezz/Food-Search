@@ -32,13 +32,15 @@ export function Panel() {
     </div>
     `;
 
+    setTimeout(()=>{
+        console.log('ahora tiene que cargar el filter por defecto')
+        const $panelContent = d.querySelector('.panel__content');
+        $panelContent.appendChild(Filter()); 
+    }, 0);
+
     return $panel;
 }
 
-setTimeout(()=>{
-    const $panelContent = d.querySelector('.panel__content');
-    $panelContent.appendChild(Filter()); 
-}, 0)
 
 d.addEventListener('click', e => {
     const $panelContent = d.querySelector('.panel__content');
