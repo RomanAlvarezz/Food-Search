@@ -1,22 +1,22 @@
 @use '../base/variables' as v;
 
 .footer {
-    position: relative;
+    //position: relative;
     background-color: v.$Orange;
     color: v.$White;
     padding-top: 60px;
 
-    &::after {
-        content: "";
-        z-index: -5;
-        position: absolute;
-        height: 100%;
-        width: 300%;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background-color: v.$Orange;
-    }
+    // &::after {
+    //     content: "";
+    //     z-index: -5;
+    //     position: absolute;
+    //     height: 100%;
+    //     width: 300%;
+    //     top: 50%;
+    //     left: 50%;
+    //     transform: translate(-50%, -50%);
+    //     background-color: v.$Orange;
+    // }
 
 
     &__icon {

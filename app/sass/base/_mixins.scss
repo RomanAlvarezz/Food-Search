@@ -52,11 +52,15 @@
 }
 
 @mixin modal-close {
-     display: block;
-     width: 30px;
-     margin-left: auto;
-     margin-bottom: 10px;
-     cursor: pointer;
+    display: block;
+    width: 30px;
+    margin-left: auto;
+    margin-bottom: 10px;
+    cursor: pointer;
+
+    &:hover {
+        content: url(../assets/icon-close-hover.svg);
+    }
 }
 
 @mixin modal-title {
