@@ -18,45 +18,57 @@ export function Filter() {
     `;
 
     setTimeout(()=>{
-        let initialContent = '';
-        api.CUISINE.forEach(textItem => initialContent += `<span class="filter__option" data-state="inactive">${textItem}</span>`);
-        d.querySelector('.filter__content').innerHTML = initialContent;
+        renderOptions('cuisine');
     }, 10);
 
     return $filter;
 }
 
-function categorySelected(category) {
+function renderOptions(category){
     let html = '';
     const $filterContent = d.querySelector('.filter__content');
     $filterContent.innerHTML = '';
+    const filterObj = JSON.parse(localStorage.getItem('filter')) || {};
 
-    switch (category) {
-        case 'CUISINE':
-            api[category].forEach(textItem => html += `<span class="filter__option" data-state="inactive">${textItem}</span>`);
-            break;
-        case 'DIET':
-            api[category].forEach(textItem => html += `<span class="filter__option" data-state="inactive">${textItem}</span>`);
-            $filterContent.insertAdjacentHTML('afterbegin', `
-            <button class="filter__btn-info"><p>diet</p><p>info</p></button>`);
-            break;
-        case 'TYPE':
-            api[category].forEach(textItem => html += `<span class="filter__option" data-state="inactive">${textItem}</span>`);
-            break;
-        case 'INTOLERANCES':
-            api[category].forEach(textItem => html += `<span class="filter__option" data-state="inactive">${textItem}</span>`);
-            break;
+    if(!(filterObj[category])) {
+        filterObj[category] = []; 
     }
+
+    if(filterObj[category].length === 0){
+        api[category].forEach(option => html += `<span class="filter__option" data-state="inactive">${option}</span>`);
+    } else {
+        api[category].forEach(option => {
+            if (filterObj[category].includes(option)) {
+                html += `<span class="filter__option filter__option-active" data-state="inactive">${option}</span>`;
+            } else {
+                html += `<span class="filter__option" data-state="inactive">${option}</span>`;
+            }
+        })
+    }
+
 
     $filterContent.insertAdjacentHTML('afterbegin', html);
 }
 
 function optionSelected($op) {
+    const category = d.querySelector('.filter__category-active').textContent;
+    const filterObj = JSON.parse(localStorage.getItem('filter')) || {};
+
     if ($op.matches('.filter__option-active')) {
         $op.classList.remove('filter__option-active');
+
+        const index = filterObj[category].indexOf($op.textContent);
+        filterObj[category].splice(index, 1);
     } else {
         $op.classList.add('filter__option-active');
+
+        if(!(filterObj[category])){
+            filterObj[category] = []; 
+        }
+        filterObj[category].push($op.textContent);
     }
+
+    localStorage.setItem('filter', JSON.stringify(filterObj));
 }
 
 d.addEventListener('click', e => {
@@ -72,7 +84,7 @@ d.addEventListener('click', e => {
         d.querySelector('.filter__category-active').classList.remove('filter__category-active');
         $element.classList.add('filter__category-active');
 
-        categorySelected($element.textContent.toUpperCase());
+        renderOptions($element.textContent);
 
         return;
     }
