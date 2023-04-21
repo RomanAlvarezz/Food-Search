@@ -624,6 +624,12 @@ body {
   text-align: center;
   margin-bottom: 20px;
 }
+.saved__empty {
+  font-weight: 500;
+  margin-top: 50px;
+  color: #F2F2F2;
+  text-align: center;
+}
 .saved__card {
   display: block;
   position: relative;
@@ -865,12 +871,28 @@ div[class^=swiper-button] img {
   font-size: 1rem;
 }
 
+.post__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
 .post__title {
   margin-bottom: 10px;
 }
 @media (min-width: 650px) {
   .post__title {
     font-size: 30px;
+  }
+}
+.post__btn-save {
+  cursor: pointer;
+}
+.post__btn-save-active {
+  content: url(../assets/icon-bookmark.svg);
+}
+@media (min-width: 700px) {
+  .post__btn-save {
+    width: 30px;
   }
 }
 .post__tag {

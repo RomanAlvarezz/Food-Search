@@ -11,13 +11,19 @@
 
     &__btn-close {
         @include m.modal-close;
-
     }
 
     &__title {
         @include m.modal-title;
         text-align: center;
         margin-bottom: 20px;
+    }
+
+    &__empty {
+        font-weight: 500;
+        margin-top: 50px;
+        color: v.$White;
+        text-align: center;
     }
 
     &__card {

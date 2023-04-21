@@ -4,9 +4,23 @@ export function Post(postInfo) {
     const $section = d.createElement('section');
     $section.classList.add('post');
 
+    const $postHeader = d.createElement('div');
+    $postHeader.classList.add('post__header');
+
     const $title = d.createElement('h1');
     $title.classList.add('post__title');
     $title.textContent = postInfo.title;
+
+    const $btnSave = d.createElement('img');
+    $btnSave.src = './app/assets/icon-bookmark-white.svg';
+    $btnSave.classList.add('post__btn-save');
+    $btnSave.dataset.id = postInfo.id;
+    $btnSave.dataset.image = postInfo.image;
+    $btnSave.dataset.title = postInfo.title;
+    const savedList = JSON.parse(localStorage.getItem('saved')) || {};
+    if (savedList[postInfo.id]) {
+        $btnSave.classList.add('post__btn-save-active');
+    }
 
     const $tagContainer = d.createElement('div');
     $tagContainer.classList.add('post__tag-container');
@@ -50,10 +64,13 @@ export function Post(postInfo) {
     ${$instructions}
     `;
 
+    $postHeader.appendChild($title);
+    $postHeader.appendChild($btnSave);
+
     $postCard.appendChild($postIngredients);
     $postCard.appendChild($postInstructions);
 
-    $section.appendChild($title);
+    $section.appendChild($postHeader);
     $section.appendChild($tagContainer);
     $section.appendChild($image);
     $section.appendChild($text);
@@ -98,3 +115,9 @@ export function Post(postInfo) {
 
     return $section;
 }
+
+d.addEventListener('click', e => {
+    if (e.target.matches('post__btn-save')) {
+
+    }
+});

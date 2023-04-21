@@ -1,6 +1,11 @@
 @use '../base/variables' as v;
 
 .post {
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+    }
 
     &__title {
         margin-bottom: 10px;
@@ -10,8 +15,19 @@
         }
     }
 
+    &__btn-save {
+
+        cursor: pointer;
+        &-active {
+            content: url(../assets/icon-bookmark.svg);
+        }
+
+        @media (min-width: 700px) {
+            width: 30px;
+        }
+    }
+
     &__tag {
-        // background-color: v.$Orange;
         background-image: linear-gradient(-60deg, #ff5858 0%, #f09819 100%);
         color: v.$White;
         font-size: 12px;
