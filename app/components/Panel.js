@@ -35,7 +35,7 @@ export function Panel() {
     setTimeout(()=>{
         const panelContent = localStorage.getItem('panelContent') || 'fridge';
         const $panelContent = d.querySelector('.panel__content');
-        console.log(panelContent);
+
         if (panelContent == 'fridge') {
             $panelContent.appendChild(Fridge());
         } else {
