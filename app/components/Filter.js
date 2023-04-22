@@ -14,12 +14,13 @@ export function Filter() {
         <h3 class="filter__category">intolerances</h3>
     </div> 
     <div class="filter__content">
+    
     </div>    
     `;
 
     setTimeout(()=>{
         renderOptions('cuisine');
-    }, 10);
+    }, 5);
 
     return $filter;
 }
@@ -48,6 +49,7 @@ function renderOptions(category){
 
 
     $filterContent.insertAdjacentHTML('afterbegin', html);
+    if(category == 'diet') $filterContent.insertAdjacentHTML('afterbegin', `<button class="filter__btn-info"><p>diet</p><p>info</p></button>`);
 }
 
 function optionSelected($op) {
