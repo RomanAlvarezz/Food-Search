@@ -137,6 +137,7 @@ body {
   }
 }
 .search__btn {
+  cursor: pointer;
   outline: none;
   border: none;
   position: absolute;
