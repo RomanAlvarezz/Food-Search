@@ -33,10 +33,15 @@ export function Panel() {
     `;
 
     setTimeout(()=>{
-        console.log('ahora tiene que cargar el filter por defecto')
+        const panelContent = localStorage.getItem('panelContent') || 'fridge';
         const $panelContent = d.querySelector('.panel__content');
-        $panelContent.appendChild(Filter()); 
-    }, 0);
+        console.log(panelContent);
+        if (panelContent == 'fridge') {
+            $panelContent.appendChild(Fridge());
+        } else {
+            $panelContent.appendChild(Filter()); 
+        }
+    }, 5);
 
     return $panel;
 }
@@ -50,10 +55,12 @@ d.addEventListener('click', e => {
 
         switch ($option.dataset.paneloption) {
             case 'filter':
+                localStorage.setItem('panelContent', 'filter');
                 $panelContent.innerHTML = '';
                 $panelContent.appendChild(Filter()); 
                 break;
             case 'fridge':
+                localStorage.setItem('panelContent', 'fridge')
                 $panelContent.innerHTML = '';
                 $panelContent.appendChild(Fridge()); 
                 break;
