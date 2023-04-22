@@ -33,7 +33,6 @@ export function Fridge() {
 function renderIngredients() {
     let html = '';
     const $ingredientsContainer = d.querySelector('.fridge__ingredients');
-    console.log($ingredientsContainer);
     $ingredientsContainer.innerHTML = '';
     const fridgeArr = JSON.parse(localStorage.getItem('fridge')) || [];
 
@@ -58,6 +57,7 @@ d.addEventListener('click', e => {
         localStorage.setItem('fridge', JSON.stringify(fridgeArr));
         //renderIngredients();
         $element.parentElement.remove();
+        return;
     }
 
     if ($element.matches('.fridge__input-btn')) {
@@ -71,6 +71,16 @@ d.addEventListener('click', e => {
             //renderIngredients();
             const $ingredients = d.querySelector('.fridge__ingredients');
             $ingredients.insertAdjacentHTML('afterbegin', `<span class="fridge__ingredient">${ingredient}<i class="fa-solid fa-xmark fridge__ingredient-xmark"></i></span>`);
+        }
+        return;
+    }
+
+    if ($element.matches('.fridge__btn')) {
+        const fridgeArr = JSON.parse(localStorage.getItem('fridge')) || [];
+        if (fridgeArr.length != 0) {
+            const ingredients = fridgeArr.join();
+            let url = `#/fridge?ingredients=${ingredients}`;
+            location.hash = url;
         }
     }
 })
