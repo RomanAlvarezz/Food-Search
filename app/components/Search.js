@@ -6,7 +6,7 @@ export function Search() {
     <button class="search__btn" type="submit">
         <img class="search__btn-img" src="./app/assets/icon-search-1.svg" alt="search icon">
     </button>
-    <input class="search__input" placeholder="Search..." type="text">
+    <input class="search__input" name="search" placeholder="Search..." type="text">
     <div class="search-recents">
         <h2 class="search-recents__title">
             Recent Searches
@@ -28,3 +28,34 @@ export function Search() {
 
     return $search;
 }
+
+document.addEventListener('submit', e => {
+    if (e.target.matches('.search')) {
+        e.preventDefault();
+        const query = e.target.search.value.trim();
+
+        const filterObj = JSON.parse(localStorage.getItem('filter')) || {};
+        console.log(filterObj);
+        let filterProps = false;
+        let categoryUrl = '';
+        let url = ''
+
+        if(!(Object.keys(filterObj).length === 0)){
+           let categories = [];
+           for (const category in filterObj) {
+                if(filterObj[category].length != 0){
+                    filterProps = true;
+                    //console.log(filterProps, category);
+                    let arrContent = filterObj[category].join();
+                    categories.push(`${category}=${arrContent}`); 
+                }
+            }
+            categoryUrl = categories.join('&')
+        }
+        
+        if(query || filterProps) {
+            url = `#/filter?${query ? `query=${query}&` : ''}${filterProps ? categoryUrl: ''}`;
+            location.hash = url.trim();
+        }
+    }
+})
