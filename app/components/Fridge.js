@@ -71,6 +71,7 @@ d.addEventListener('click', e => {
             //renderIngredients();
             const $ingredients = d.querySelector('.fridge__ingredients');
             $ingredients.insertAdjacentHTML('afterbegin', `<span class="fridge__ingredient">${ingredient}<i class="fa-solid fa-xmark fridge__ingredient-xmark"></i></span>`);
+            $input.value = '';
         }
         return;
     }
