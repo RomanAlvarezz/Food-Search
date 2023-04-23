@@ -35,17 +35,15 @@ document.addEventListener('submit', e => {
         const query = e.target.search.value.trim();
 
         const filterObj = JSON.parse(localStorage.getItem('filter')) || {};
-        console.log(filterObj);
         let filterProps = false;
         let categoryUrl = '';
-        let url = ''
+        let url = '';
 
         if(!(Object.keys(filterObj).length === 0)){
            let categories = [];
            for (const category in filterObj) {
                 if(filterObj[category].length != 0){
                     filterProps = true;
-                    //console.log(filterProps, category);
                     let arrContent = filterObj[category].join();
                     categories.push(`${category}=${arrContent}`); 
                 }
