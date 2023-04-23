@@ -68,7 +68,29 @@ d.addEventListener('click', e => {
                 d.querySelector('.saved__modal').style.transform = 'translateX(0)';
                 break;
             case 'reset':
-            console.log('este es el reseteo, falta codear su funcinalidad');
+                if($panelContent.firstElementChild.className == 'filter') {
+                    const $activeOptions = d.querySelectorAll('.filter__option-active');
+                    $activeOptions.forEach(op => op.classList.remove('filter__option-active'));
+
+                    const filterObj = JSON.parse(localStorage.getItem('filter')) || {};
+                    if(!(Object.keys(filterObj).length === 0)) {
+                        for (const category in filterObj) {
+                            filterObj[category] = []
+                        }
+                    }
+                    localStorage.setItem('filter', JSON.stringify(filterObj));
+                    return;
+                } 
+                if ($panelContent.firstElementChild.className == 'fridge') {
+                    const $ingredients = d.querySelectorAll('.fridge__ingredient');
+                    $ingredients.forEach($ingredient => $ingredient.remove());
+
+                    let fridgeArr = JSON.parse(localStorage.getItem('fridge')) || [];
+                    if (fridgeArr.length > 0) fridgeArr = [];
+                    localStorage.setItem('fridge', JSON.stringify(fridgeArr));
+                    return;
+                }
+
                 break;
         }
     }
