@@ -72,9 +72,12 @@ d.addEventListener('click', e => {
     }
 
     if (e.target.matches('.saved__card__delete')) {
+        
+        e.target.parentElement.href = 'javascript:void(0)';
         const savedCardsObj = JSON.parse(localStorage.getItem('saved')) || {};
         delete savedCardsObj[e.target.dataset.id];
         localStorage.setItem('saved', JSON.stringify(savedCardsObj));
+
         const $btnSave = d.querySelector('.post__btn-save');
         if ($btnSave) {
             $btnSave.classList.remove('post__btn-save-active');
