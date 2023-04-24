@@ -56,7 +56,7 @@ export function Diets() {
     `;
 
     d.addEventListener('click', e => {
-        if (e.target.matches('.diets__btn-close')) {
+        if (e.target.matches('.diets__btn-close') || e.target.matches('.diets__modal')) {
             d.querySelector('.diets__modal').style.transform = 'translateX(-100%)';
         }
     })

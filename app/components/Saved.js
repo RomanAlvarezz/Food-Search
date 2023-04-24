@@ -43,7 +43,8 @@ function renderCards() {
 }
 
 d.addEventListener('click', e => {
-    if (e.target.matches('.saved__btn-close')) {
+    console.log(e.target);
+    if (e.target.matches('.saved__btn-close') || e.target.matches('.saved__modal')) {
         d.querySelector('.saved__modal').style.transform ='translateX(100%)'
         return;
     }
