@@ -1,5 +1,7 @@
+const d = document;
+
 export function Search() {
-    const $search = document.createElement('form');
+    const $search = d.createElement('form');
     $search.classList.add('search');
 
     $search.innerHTML = `
@@ -11,25 +13,17 @@ export function Search() {
         <h2 class="search-recents__title">
             Recent Searches
         </h2>
-        <p class="search-recents__option"
-        data-recent="pizza">
-            Pizza
-        </p>
-        <p class="search-recents__option"
-        data-recent="pizza">
-            Pizza
-        </p>
-        <p class="search-recents__option"
-        data-recent="pizza">
-            Pizza
-        </p>
+        <div class="search-recents__container">
+            
+        </div>
+        
     </div>
     `;
 
     return $search;
 }
 
-document.addEventListener('submit', e => {
+d.addEventListener('submit', e => {
     if (e.target.matches('.search')) {
         e.preventDefault();
         const query = e.target.search.value.trim();
@@ -57,3 +51,33 @@ document.addEventListener('submit', e => {
         }
     }
 })
+
+d.addEventListener('click', e => {
+    if (e.target.matches('.search__input')) {
+        const recentSearches = JSON.parse(localStorage.getItem('recentSearches')) || [];
+        if (recentSearches.length > 0) {
+            d.querySelector('.search-recents').style.display = 'initial';
+            let html = '';
+            recentSearches.forEach(query => html += `
+            <div class="search-recents__option">
+            <p class="search-recents__text">${query}</p>
+            <i data-query="${query}" class="fa-solid fa-xmark search-recents__close"></i>
+            </div>`);
+            d.querySelector('.search-recents__container').innerHTML = html;
+        }
+
+    } else if (e.target.matches('.search-recents__option')) {
+        d.querySelector('.search__input').value = e.target.innerText;
+
+    } else if (e.target.matches('.search-recents__close')) {
+        const recentSearches = JSON.parse(localStorage.getItem('recentSearches'));
+        const index = recentSearches.indexOf(e.target.dataset.query);
+        recentSearches.splice(index, 1);
+        localStorage.setItem('recentSearches', JSON.stringify(recentSearches));
+        e.target.parentElement.remove();
+        if(recentSearches.length == 0) d.querySelector('.search-recents').style.display = 'none';
+
+    } else {
+        d.querySelector('.search-recents').style.display = 'none';
+    }
+});
