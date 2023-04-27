@@ -55,7 +55,7 @@ d.addEventListener('click', e => {
         const index = fridgeArr.indexOf($element.dataset.ingredient);
         fridgeArr.splice(index,1);
         localStorage.setItem('fridge', JSON.stringify(fridgeArr));
-        //renderIngredients();
+
         $element.parentElement.remove();
         return;
     }
@@ -68,10 +68,11 @@ d.addEventListener('click', e => {
             const fridgeArr = JSON.parse(localStorage.getItem('fridge')) || [];
             fridgeArr.push(ingredient);
             localStorage.setItem('fridge', JSON.stringify(fridgeArr));
-            //renderIngredients();
+
             const $ingredients = d.querySelector('.fridge__ingredients');
             $ingredients.insertAdjacentHTML('afterbegin', `<span class="fridge__ingredient">${ingredient}<i class="fa-solid fa-xmark fridge__ingredient-xmark"></i></span>`);
             $input.value = '';
+            d.querySelector('.fridge__input').focus();
         }
         return;
     }
