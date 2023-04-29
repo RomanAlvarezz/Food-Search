@@ -12,7 +12,6 @@ export async function Router() {
     $main = d.getElementById('main');
 
     let { hash } = location;
-    console.log(hash);
 
     $main.innerHTML = '';
 
