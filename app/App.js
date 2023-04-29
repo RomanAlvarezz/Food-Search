@@ -15,7 +15,7 @@ export function App() {
     $root.appendChild(Main());
     $root.appendChild(Saved());
     $root.appendChild(Diets());
-    $root.appendChild(Footer());
-
+    document.body.appendChild(Footer());
+    
     Router();
 }
