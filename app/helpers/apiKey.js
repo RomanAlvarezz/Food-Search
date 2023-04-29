@@ -1,0 +1,3 @@
+const SPOONACULAR_API_KEY = '5a3347b00faa4f6894589ad600f653fb';
+
+export default SPOONACULAR_API_KEY;
