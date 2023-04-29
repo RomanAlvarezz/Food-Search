@@ -15,16 +15,20 @@ export async function ajax(props) {
         cbSuccess(data);
 
     } catch (err) {
-        if(err.status == 400) {
+        if(err.status == 404) {
             document.querySelector('#main').innerHTML = '';
             document.querySelector('#main').appendChild(ErrorPage());
             return; 
         }
+        if(err.status == 401) {
+            document.querySelector('#main').innerHTML = `
+            <p class="error__title">Error ${err.status}: You need an Api Key to use this Application</p>
+        `;
+            return; 
+        }
         let msg = err.statusText || 'There has been an error processing your request';
         document.querySelector('#main').innerHTML = `
-        <div class="error">
-            <p>Error ${err.status}: ${msg}</p>
-        </div>
+            <p class="error_title">Error ${err.status}: ${msg}</p>
         `;
         console.warn(err); 
     }
