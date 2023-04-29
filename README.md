@@ -1,4 +1,4 @@
-# Juego de Memoria
+# Linguini's Kitchen
 
 ![img](./app/assets/LinguinisKitchenScreen.png)
 
