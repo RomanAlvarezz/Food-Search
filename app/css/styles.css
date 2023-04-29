@@ -1044,4 +1044,43 @@ div[class^=swiper-button] img {
   color: #F2F2F2;
 }
 
+.error {
+  width: 100%;
+}
+.error__image {
+  width: 100%;
+}
+.error__title {
+  color: #EA116C;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 25px;
+}
+@media (min-width: 600px) {
+  .error__title {
+    font-size: 30px;
+  }
+}
+.error__link {
+  background-color: #EA116C;
+  display: block;
+  width: 124px;
+  padding: 5px 0;
+  text-align: center;
+  margin: 0 auto;
+  color: white;
+  text-decoration: none;
+  border-radius: 2px;
+  transition: background-color 100ms ease-in-out;
+}
+.error__link:hover {
+  background-color: hsl(335deg, 86%, 41%);
+}
+@media (min-width: 600px) {
+  .error__link {
+    font-size: 18px;
+    width: 140px;
+  }
+}
+
 /*# sourceMappingURL=styles.css.map */

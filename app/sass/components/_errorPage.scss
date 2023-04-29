@@ -1,0 +1,40 @@
+.error {
+    width: 100%;
+
+    &__image {
+        width: 100%;
+    }
+
+    &__title {
+        color: #EA116C;
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 25px;
+        
+        @media (min-width: 600px) {
+            font-size: 30px;
+        }
+    }
+
+    &__link {
+        background-color: #EA116C;
+        display: block;
+        width: 124px;
+        padding: 5px 0;
+        text-align: center;
+        margin: 0 auto;
+        color: white;
+        text-decoration: none;
+        border-radius: 2px;
+        transition: background-color 100ms ease-in-out;
+
+        &:hover {
+            background-color: hsl(335, 86%, 41%)
+        }
+
+        @media (min-width: 600px) {
+            font-size: 18px;
+            width: 140px;
+        }
+    }
+}
