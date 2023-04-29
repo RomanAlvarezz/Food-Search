@@ -22,7 +22,7 @@ export async function Router() {
             $main.appendChild(Slider('our vegetarian picks', JSON.parse(checkRandom)));
         } else {
             await ajax({
-                url: `${api.baseURL}/random?apiKey=${api.apikey}&number=10&tags=vegan`,
+                url: `${api.baseURL}/random?apiKey=${api.apiKey}&number=10&tags=vegan`,
                 cbSuccess: (data) => {
                     $main.appendChild(Slider('our vegetarian picks', data.recipes));
                     localStorage.setItem('vegan', JSON.stringify(data.recipes)); 
@@ -35,7 +35,7 @@ export async function Router() {
             $main.appendChild(Cards('trending', JSON.parse(checkDessert)));
         } else {
             await ajax({
-                url: `${api.baseURL}/random?apiKey=${api.apikey}&number=20`,
+                url: `${api.baseURL}/random?apiKey=${api.apiKey}&number=20`,
                 cbSuccess: (data) => {
                     $main.appendChild(Cards('trending', data.recipes));
                     localStorage.setItem('random', JSON.stringify(data.recipes)); 

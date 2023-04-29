@@ -8,7 +8,7 @@ const cuisine = ['african', 'american', 'british', 'cajun', 'caribbean', 'chines
  intolerances = ['dairy', 'egg', 'gluten', 'grain', 'peanut', 'seafood', 'sesame', 'shellfish', 'soy', 'sulfite', 'tree Nut', 'wheat'];
 
  const baseURL = 'https://api.spoonacular.com/recipes',
- apiKey = '5a3347b00faa4f6894589ad600f653fb';
+ apiKey = SPOONACULAR_API_KEY;
 
  export default {
     cuisine,
