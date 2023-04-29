@@ -1,3 +1,5 @@
+import SPOONACULAR_API_KEY from './apiKey.js';
+
 const cuisine = ['african', 'american', 'british', 'cajun', 'caribbean', 'chinese', 'eastern european', 'european',
 'french', 'german', 'greek', 'indian', 'irish', 'italian', 'japanese', 'jeweish', 'korean', 'latin american', 'mediterranean', 'mexican', 'meddle eastern', 'nordic', 'southern', 'spanish', 'thai', 'vietnamese'],
  type = ['main course', 'side dish', 'dessert', 'appetizer', 'salad', 'bread', 'breakfast', 'soup', 'beverage', 'sauce', 'marinade', 'fingerfood', 'snack', 'drink'],
@@ -6,7 +8,7 @@ const cuisine = ['african', 'american', 'british', 'cajun', 'caribbean', 'chines
  intolerances = ['dairy', 'egg', 'gluten', 'grain', 'peanut', 'seafood', 'sesame', 'shellfish', 'soy', 'sulfite', 'tree Nut', 'wheat'];
 
  const baseURL = 'https://api.spoonacular.com/recipes',
- apiKey = 'ACA DEBE IR TU API KEY';
+ apiKey = '5a3347b00faa4f6894589ad600f653fb';
 
  export default {
     cuisine,
