@@ -15,7 +15,7 @@ export function Post(postInfo) {
     $btnSave.src = './app/assets/icon-bookmark-white.svg';
     $btnSave.classList.add('post__btn-save');
     $btnSave.dataset.id = postInfo.id;
-    $btnSave.dataset.image = postInfo.image;
+    $btnSave.dataset.image = postInfo.image || './app/assets/unknown-Image.webp';
     $btnSave.dataset.title = postInfo.title;
     const savedList = JSON.parse(localStorage.getItem('saved')) || {};
     if (savedList[postInfo.id]) {
@@ -30,7 +30,7 @@ export function Post(postInfo) {
 
     const $image = d.createElement('img');
     $image.classList.add('post__image');
-    $image.src = postInfo.image;
+    $image.src = postInfo.image || './app/assets/unknown-Image.webp';
 
     const $text = d.createElement('p');
     $text.classList.add('post__text');

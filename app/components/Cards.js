@@ -14,39 +14,12 @@ export function Cards(title, recipes) {
     let $cards = '';
     recipes.forEach(recipe => $cards += `
     <a class="card" href="#/recipe?id=${recipe.id}">
-        <img class="card__img" src="${recipe.image}" alt="card image">
+        <img class="card__img" src="${recipe.image || './app/assets/unknown-Image.webp'}" alt="card image">
         <h3 class="card__title">${recipe.title}</h3>
     </a>
     `);
 
     $cardsContainer.innerHTML = $cards;
-
-    /*$cardsContainer.innerHTML = `
-        <a class="card" href="#/20">
-            <img class="card__img" src="https://picsum.photos/id/20/300" alt="card image">
-            <h3 class="card__title">Partlitc pasta with olive oil</h3>
-        </a>
-        <a class="card" href="#/21">
-            <img class="card__img" src="https://picsum.photos/id/21/300" alt="card image">
-            <h3 class="card__title">Partlitc pasta with olive oil</h3>
-        </a>
-        <a class="card" href="#/22">
-            <img class="card__img" src="https://picsum.photos/id/22/300" alt="card image">
-            <h3 class="card__title">Partlitc pasta with olive oil</h3>
-        </a>
-        <a class="card" href="#/23">
-            <img class="card__img" src="https://picsum.photos/id/23/300" alt="card image">
-            <h3 class="card__title">Partlitc pasta with olive oil</h3>
-        </a>
-        <a class="card" href="#/24">
-            <img class="card__img" src="https://picsum.photos/id/24/300" alt="card image">
-            <h3 class="card__title">Partlitc pasta with olive oil</h3>
-        </a>
-        <a class="card" href="#/25">
-            <img class="card__img" src="https://picsum.photos/id/25/300" alt="card image">
-            <h3 class="card__title">Partlitc pasta with olive oil</h3>
-        </a>
-    `;*/
 
     $section.appendChild($title);
     $section.appendChild($cardsContainer);
